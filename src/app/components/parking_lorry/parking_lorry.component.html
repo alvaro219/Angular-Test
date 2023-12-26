@@ -1,0 +1,14 @@
+<details>
+  <summary>Parking Lorries</summary>
+  <ul>
+    <li *ngFor="let lorry of parking_lorry">
+      {{ lorry.title }}
+    </li>
+    <li *ngIf="error">
+      {{ error }}
+    </li>
+    <li *ngIf="!parking_lorry.length && !error">
+      No parking lorries
+    </li>
+  </ul>
+</details>

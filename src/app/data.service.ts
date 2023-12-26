@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ElectricChargingStationResponse, ElectricChargingStation, RoadListResponse, RoadworksResponse, ParkingLorryResponse, Warning, WarningResponse, ClosureResponse } from './types';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,76 +12,63 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getAutobahnen(): Promise<string[]> {
+  getAutobahnen(): Observable<RoadListResponse> {
     return this.http.get<any>(this.apiUrl)
-      .toPromise()
-      .then(response => response.roads as string[])
-      .catch(this.handleError);
   }
 
-  private handleError(error: any): Promise<any> {
-    console.error('Error:', error);
-    return Promise.reject(error.message || error);
-  }
-
-  getRoadWorks(roadId: string): Promise<any> {
+  getRoadWorks(roadId: string): Observable<RoadworksResponse> {
     const url = `${this.apiUrl}/${roadId}/services/roadworks`;
-    return this.http.get<any>(url).toPromise();
+    return this.http.get<any>(url);
   }
 
-  getRoadWorkDetails(roadworkId: string): Promise<any> {
-    const url = `${this.apiUrl}/roadworkdetails/${roadworkId}`;
-    return this.http.get<any>(url).toPromise();
+  // getRoadWorkDetails(roadworkId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/roadworkdetails/${roadworkId}`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
+
+  // getWebcams(roadId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/${roadId}/services/webcams`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
+
+  // getWebcamDetails(webcamId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/webcamdetails/${webcamId}`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
+
+  getParkingLorry(roadId: string): Observable<ParkingLorryResponse> {
+    const url = `${this.apiUrl}/${roadId}/services/parking_lorry`;
+    return this.http.get<any>(url);
   }
 
-  getWebcams(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/webcams`;
-    return this.http.get<any>(url).toPromise();
+  // getParkingLorryDetails(lorryId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/lorryparkingdetails/${lorryId}`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
+
+  getTrafficWarnings(roadId: string): Observable<WarningResponse> {
+    const url = `${this.apiUrl}/${roadId}/services/warning`;
+    return this.http.get<any>(url);
   }
 
-  getWebcamDetails(webcamId: string): Promise<any> {
-    const url = `${this.apiUrl}/webcamdetails/${webcamId}`;
-    return this.http.get<any>(url).toPromise();
+  // getTrafficWarningDetails(warningId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/warnings/${warningId}`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
+
+  getClosures(roadId: string): Observable<ClosureResponse> {
+    const url = `${this.apiUrl}/${roadId}/services/closure`;
+    return this.http.get<any>(url);
   }
 
-  getRestAreas(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/restareas`;
-    return this.http.get<any>(url).toPromise();
-  }
+  // getClosureDetails(closureId: string): Promise<any> {
+  //   const url = `${this.apiUrl}/closures/${closureId}`;
+  //   return this.http.get<any>(url).toPromise();
+  // }
 
-  getLorryParkings(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/lorryparkings`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getLorryParkingDetails(lorryId: string): Promise<any> {
-    const url = `${this.apiUrl}/lorryparkingdetails/${lorryId}`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getTrafficWarnings(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/warnings`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getTrafficWarningDetails(warningId: string): Promise<any> {
-    const url = `${this.apiUrl}/warnings/${warningId}`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getClosures(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/closures`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getClosureDetails(closureId: string): Promise<any> {
-    const url = `${this.apiUrl}/closures/${closureId}`;
-    return this.http.get<any>(url).toPromise();
-  }
-
-  getElectricChargingStations(roadId: string): Promise<any> {
-    const url = `${this.apiUrl}/${roadId}/services/chargingstations`;
-    return this.http.get<any>(url).toPromise();
+  getElectricChargingStations(roadId: string): Observable<ElectricChargingStationResponse> {
+    const url = `${this.apiUrl}/${roadId}/services/electric_charging_station`;
+    return this.http.get<ElectricChargingStationResponse>(url)
   }
 
   getElectricChargingStationDetails(stationId: string): Promise<any> {

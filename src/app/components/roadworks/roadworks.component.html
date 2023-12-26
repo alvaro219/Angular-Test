@@ -1,0 +1,14 @@
+<details>
+  <summary>Road Works</summary>
+  <ul>
+    <li *ngFor="let work of roadworks">
+      {{ work.title }}
+    </li>
+    <li *ngIf="error">
+      {{ error }}
+    </li>
+    <li *ngIf="!roadworks.length && !error">
+      No road works
+    </li>
+  </ul>
+</details>

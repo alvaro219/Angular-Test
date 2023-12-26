@@ -1,0 +1,14 @@
+<details>
+  <summary>Closures</summary>
+  <ul>
+    <li *ngFor="let c of closure">
+      {{ c.title }}
+    </li>
+    <li *ngIf="error">
+      {{ error }}
+    </li>
+    <li *ngIf="!closure.length && !error">
+      No Closures
+    </li>
+  </ul>
+</details>

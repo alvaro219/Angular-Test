@@ -57,7 +57,7 @@
     min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
@@ -174,30 +174,16 @@
     <ul>
       <ng-container *ngIf="autobahnen && autobahnen.length > 0; else noDataAutobahnen">
         <li *ngFor="let road of autobahnen">
-          Autobahn: {{ road }}
-          <ul>
-            <li *ngFor="let work of roadworks">
-              Road Work: {{ work.title }}
-            </li>
-          </ul>
+          <h2>Autobahn: {{ road }}</h2>
+          <roadworks id="{{ road }}"></roadworks>
+          <parking-lorry id="{{ road }}"></parking-lorry>
+          <warning id="{{ road }}"></warning>
+          <closure id="{{ road }}"></closure>
+          <charging-station id="{{ road }}"></charging-station>
         </li>
       </ng-container>
       <ng-template #noDataAutobahnen>
         <li>No hay datos de Autobahnen disponibles</li>
-      </ng-template>
-    </ul>
-  </div>
-
-  <div>
-    <h1>Listado de Estaciones de Carga</h1>
-    <ul>
-      <ng-container *ngIf="electricChargingStations && electricChargingStations.length > 0; else noDataStations">
-        <li *ngFor="let station of electricChargingStations">
-          Estación: {{ station.title }}
-        </li>
-      </ng-container>
-      <ng-template #noDataStations>
-        <li>No hay datos de estaciones de carga disponibles</li>
       </ng-template>
     </ul>
   </div>

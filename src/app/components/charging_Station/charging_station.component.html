@@ -1,0 +1,14 @@
+<details>
+  <summary>Charging Stations</summary>
+  <ul>
+    <li *ngFor="let ch of charging_station">
+      {{ ch.title }}
+    </li>
+    <li *ngIf="error">
+      {{ error }}
+    </li>
+    <li *ngIf="!charging_station.length && !error">
+      No Charging Stations
+    </li>
+  </ul>
+</details>
