@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
   electricChargingStations: ElectricChargingStation[] = [];
   electricChargingStationDetails: any[] = [];
   station: any;
+  source: Array<any> = [];
+  columns: Array<GuiColumn> = [];
 
   title = 'Angular_Test';
 
@@ -32,37 +34,51 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     firstValueFrom(this.dataService.getAutobahnen()).then(res => {
       this.autobahnen = res.roads;
+      this.source = this.generateSourceData();
+      this.columns = this.generateColumns();
     });
   }
-  source: Array<any> = [
-    {
-      name: 'Brad',
-      job: 'programmer',
-      age: '40'
-    },
-    {
-      name: 'John',
-      job: 'athlete',
-      age: '22'
-    },
-    {
-      name: 'Eve',
-      job: 'artist',
-      age: '25'
-    }
-];
-columns: Array<GuiColumn> = [
-  {
-    header: 'Name',
-    field: 'name'
-  },
-  {
-    header: 'Job',
-    field: 'job'
-  },
-  {
-    header: 'Age',
-    field: 'age'
+
+  generateSourceData(): Array<any> {
+    const newData = this.autobahnen.map(road => {
+      return{
+        first_column: road,
+        second_column: 'Lorem Ipsum',
+        third_column: 'Lorem Ipsum',
+        fourth_column: 'Lorem Ipsum',
+        fifth_column: 'Lorem Ipsum',
+        sixth_column: 'Lorem Ipsum',
+      };
+    });
+    return newData;
   }
-];
+  generateColumns(): Array<GuiColumn> {
+    return [
+      {
+        header: 'Road',
+        field: 'first_column'
+      },
+      {
+        header: 'Works',
+        field: 'second_column'
+      },
+      {
+        header: 'Parking Lorries',
+        field: 'third_column'
+      },
+      {
+        header: 'Warnings',
+        field: 'fourth_column'
+      },
+      {
+        header: 'Closures',
+        field: 'fifth_column'
+      },
+      {
+        header: 'Charging Stations',
+        field: 'sixth_column'
+      }
+    ];
+  }
 }
+
