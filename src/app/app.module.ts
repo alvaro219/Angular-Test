@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import { GuiGridModule } from '@generic-ui/ngx-grid';
+
 import { AppComponent } from './app.component';
 import { RoadworksComponent } from './components/roadworks/roadworks.component';
 import { ParkingLorryComponent } from './components/parking_lorry/parking_lorry.component';
@@ -12,7 +14,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MaterialModule } from './material.module';
 import { WarningComponent } from './components/warning/warning.component';
 import { ClosureComponent } from './components/closure/closure.component';
-import { ChargingStationComponent } from './components/charging_Station/charging_station.component';
+import { ChargingStationComponent } from './components/charging_station/charging_station.component';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { ChargingStationComponent } from './components/charging_Station/charging
     BrowserAnimationsModule,
     RouterModule,
     MaterialModule,
+    GuiGridModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
