@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, provideRouter } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,6 +15,9 @@ import { MaterialModule } from './material.module';
 import { WarningComponent } from './components/warning/warning.component';
 import { ClosureComponent } from './components/closure/closure.component';
 import { ChargingStationComponent } from './components/charging_station/charging_station.component';
+import { HomeRoute } from './routes/home/home.route';
+import { WorksRoute } from './routes/works/works.route';
+import { routes } from './app.routes';
 
 
 @NgModule({
@@ -25,6 +28,8 @@ import { ChargingStationComponent } from './components/charging_station/charging
     WarningComponent,
     ClosureComponent,
     ChargingStationComponent,
+    HomeRoute,
+    WorksRoute,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,7 @@ import { ChargingStationComponent } from './components/charging_station/charging
     MaterialModule,
     GuiGridModule,
   ],
-  providers: [],
+  providers: [provideRouter(routes)],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

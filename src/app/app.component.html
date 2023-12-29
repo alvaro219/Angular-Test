@@ -55,9 +55,6 @@
   main {
     width: 100%;
     min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
@@ -169,25 +166,5 @@
 </style>
 
 <main class="main">
-  <div>
-    <h1>Listado de Autobahnen</h1>
-    <ul>
-      <ng-container *ngIf="autobahnen && autobahnen.length > 0; else noDataAutobahnen">
-        <li *ngFor="let road of autobahnen">
-          <h2>Autobahn: {{ road }}</h2>
-          <roadworks id="{{ road }}"></roadworks>
-          <parking-lorry id="{{ road }}"></parking-lorry>
-          <warning id="{{ road }}"></warning>
-          <closure id="{{ road }}"></closure>
-          <charging-station id="{{ road }}"></charging-station>
-        </li>
-      </ng-container>
-      <ng-template #noDataAutobahnen>
-        <li>No hay datos de Autobahnen disponibles</li>
-      </ng-template>
-    </ul>
-  </div>
-    <gui-grid [source]="source"
-    [columns]="columns">
-  </gui-grid>
+  <router-outlet></router-outlet>
 </main>
