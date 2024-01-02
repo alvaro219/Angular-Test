@@ -27,12 +27,16 @@ export class ParkingsRoute implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.road = params['road'];
-      // TODO: Comprobar que efectivamente le pasas algo en ":road" y que no es undefined
+
+      if (this.road !== undefined) {
       firstValueFrom(this.dataService.getParkingLorry(this.road!)).then(res => {
         this.parking_lorry = res.parking_lorry;
         this.source = this.generateSourceData();
         this.columns = this.generateColumns();
       });
+    } else {
+      console.error('The value of "road" is undefined.');
+    }
     });
   }
 

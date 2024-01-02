@@ -27,12 +27,16 @@ export class ClosuresRoute implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.road = params['road'];
-      // TODO: Comprobar que efectivamente le pasas algo en ":road" y que no es undefined
-      firstValueFrom(this.dataService.getClosures(this.road!)).then(res => {
-        this.closure = res.closure;
-        this.source = this.generateSourceData();
-        this.columns = this.generateColumns();
-      });
+
+      if (this.road !== undefined) {
+        firstValueFrom(this.dataService.getClosures(this.road)).then(res => {
+          this.closure = res.closure;
+          this.source = this.generateSourceData();
+          this.columns = this.generateColumns();
+        });
+      } else {
+        console.error('The value of "road" is undefined.');
+      }
     });
   }
 

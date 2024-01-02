@@ -27,12 +27,16 @@ export class WorksRoute implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.road = params['road'];
-      // TODO: Comprobar que efectivamente le pasas algo en ":road" y que no es undefined
+
+      if (this.road !== undefined) {
       firstValueFrom(this.dataService.getRoadWorks(this.road!)).then(res => {
         this.roadworks = res.roadworks;
         this.source = this.generateSourceData();
         this.columns = this.generateColumns();
       });
+    } else {
+      console.error('The value of "road" is undefined.');
+    }
     });
   }
 

@@ -27,12 +27,16 @@ export class WarningsRoute implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.road = params['road'];
-      // TODO: Comprobar que efectivamente le pasas algo en ":road" y que no es undefined
+
+      if (this.road !== undefined) {
       firstValueFrom(this.dataService.getTrafficWarnings(this.road!)).then(res => {
         this.warning = res.warning;
         this.source = this.generateSourceData();
         this.columns = this.generateColumns();
       });
+    } else {
+      console.error('The value of "road" is undefined.');
+    }
     });
   }
 
