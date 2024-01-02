@@ -17,6 +17,10 @@ import { ClosureComponent } from './components/closure/closure.component';
 import { ChargingStationComponent } from './components/charging_station/charging_station.component';
 import { HomeRoute } from './routes/home/home.route';
 import { WorksRoute } from './routes/works/works.route';
+import { ParkingsRoute } from './routes/parkings/parkings.route';
+import { WarningsRoute } from './routes/warnings/warnings.route';
+import { ClosuresRoute } from './routes/closures/closures.route';
+import { ElectricChargingStationsRoute } from './routes/electric_charging_stations/charging_stations.route'
 import { routes } from './app.routes';
 
 
@@ -30,6 +34,10 @@ import { routes } from './app.routes';
     ChargingStationComponent,
     HomeRoute,
     WorksRoute,
+    ParkingsRoute,
+    WarningsRoute,
+    ClosuresRoute,
+    ElectricChargingStationsRoute,
   ],
   imports: [
     BrowserModule,

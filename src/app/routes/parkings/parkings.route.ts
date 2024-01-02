@@ -10,12 +10,12 @@ import { GuiDataType } from '@generic-ui/ngx-grid';
 
 
 @Component({
-  selector: 'works-route',
-  templateUrl: './works.route.html',
+  selector: 'parkings-route',
+  templateUrl: './parkings.route.html',
 })
-export class WorksRoute implements OnInit {
+export class ParkingsRoute implements OnInit {
   road: string | undefined;
-  roadworks: Roadwork[] = [];
+  parking_lorry: ParkingLorry[] = [];
   error: string | undefined;
   oninput: any | null;
   webcams: any[] = [];
@@ -28,8 +28,8 @@ export class WorksRoute implements OnInit {
     this.route.params.subscribe(params => {
       this.road = params['road'];
       // TODO: Comprobar que efectivamente le pasas algo en ":road" y que no es undefined
-      firstValueFrom(this.dataService.getRoadWorks(this.road!)).then(res => {
-        this.roadworks = res.roadworks;
+      firstValueFrom(this.dataService.getParkingLorry(this.road!)).then(res => {
+        this.parking_lorry = res.parking_lorry;
         this.source = this.generateSourceData();
         this.columns = this.generateColumns();
       });
@@ -37,8 +37,8 @@ export class WorksRoute implements OnInit {
   }
 
   generateSourceData(): Array<any> {
-    const newData = this.roadworks.map((roadwork, index) => {
-      return { road: this.road, ...roadwork }
+    const newData = this.parking_lorry.map((parkings, index) => {
+      return { road: this.road, ...parkings }
     });
     return newData;
   }
