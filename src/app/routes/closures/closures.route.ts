@@ -53,22 +53,22 @@ export class ClosuresRoute implements OnInit {
         header: "Identifier",
         field: "identifier"
       },
-      {
-        header: "Title",
-        field: "title"
-      },
-      {
-        header: "Subtitle",
-        field: "subtitle"
-      },
+      // {
+      //   header: "Title",
+      //   field: "title"
+      // },
+      // {
+      //   header: "Subtitle",
+      //   field: "subtitle"
+      // },
       {
         header: "Description",
         field: "description"
       },
-      {
-        header: "Subtitle",
-        field: "subtitle"
-      },
+      // {
+      //   header: "Subtitle",
+      //   field: "subtitle"
+      // },
       // {
       //   header: "Coordinate",
       //   field: "coordinate"
