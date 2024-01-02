@@ -69,10 +69,6 @@ export class ParkingsRoute implements OnInit {
         header: "Description",
         field: "description"
       },
-      {
-        header: "Subtitle",
-        field: "subtitle"
-      },
       // {
       //   header: "Coordinate",
       //   field: "coordinate"
