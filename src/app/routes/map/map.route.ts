@@ -24,7 +24,7 @@ export class MapRoute {
             attribution: '&amp;copy; OpenStreetMap contributors'
           })
         ],
-        zoom: 13,
+        zoom: 10,
         center: latLng([ 51, 9 ])
       };
 
