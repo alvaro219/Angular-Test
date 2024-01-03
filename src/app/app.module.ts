@@ -22,6 +22,8 @@ import { WarningsRoute } from './routes/warnings/warnings.route';
 import { ClosuresRoute } from './routes/closures/closures.route';
 import { ElectricChargingStationsRoute } from './routes/electric_charging_stations/charging_stations.route'
 import { routes } from './app.routes';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapRoute } from './routes/map/map.route';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { routes } from './app.routes';
     WarningsRoute,
     ClosuresRoute,
     ElectricChargingStationsRoute,
+    MapRoute
+
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { routes } from './app.routes';
     RouterModule,
     MaterialModule,
     GuiGridModule,
+    LeafletModule,
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]
