@@ -40,9 +40,4 @@ export class DataService {
     const url = `${this.apiUrl}/${roadId}/services/electric_charging_station`;
     return this.http.get<ElectricChargingStationResponse>(url)
   }
-
-  getElectricChargingStationDetails(stationId: string): Promise<any> {
-    const url = `${this.apiUrl}/chargingstationdetails/${stationId}`;
-    return this.http.get<any>(url).toPromise();
-  }
 }

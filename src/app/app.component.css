@@ -9,6 +9,35 @@ html, body {
   padding: 0;
 }
 
+nav {
+  margin-bottom: 2em;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+element.style {
+  color: black;
+  text-decoration: none;
+}
+
+nav > div {
+  display: flex;
+  gap: 1em;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+}
+
+nav a.active {
+  color: black;
+}
+
+nav a{
+  color: gray;
+  text-decoration: none;
+}
+
 :host {
   --bright-blue: oklch(51.01% 0.274 263.83);
   --electric-violet: oklch(53.18% 0.28 296.97);
