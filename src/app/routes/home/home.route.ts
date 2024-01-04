@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RoadworksResponse, ParkingLorryResponse, WarningResponse, ClosureResponse, ElectricChargingStationResponse, Roadwork, ParkingLorry, Closure, ElectricChargingStation, Warning } from '../../types';
-import { firstValueFrom, zip, forkJoin } from 'rxjs';
+import { firstValueFrom, forkJoin } from 'rxjs';
 import { GuiColumn } from '@generic-ui/ngx-grid';
 
 @Component({

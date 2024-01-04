@@ -1,12 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
-import { firstValueFrom, zip, forkJoin } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { GuiColumn } from '@generic-ui/ngx-grid';
 import { Warning } from '../../types';
 import { ActivatedRoute } from '@angular/router';
-import { GuiDataType } from '@generic-ui/ngx-grid';
-
-
 
 @Component({
   selector: 'warnings-route',

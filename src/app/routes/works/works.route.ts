@@ -1,12 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Roadwork } from '../../types';
-import { firstValueFrom, zip, forkJoin } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { GuiColumn } from '@generic-ui/ngx-grid';
 import { ActivatedRoute } from '@angular/router';
-import { GuiDataType } from '@generic-ui/ngx-grid';
-
-
 
 @Component({
   selector: 'works-route',

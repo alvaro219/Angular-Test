@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../data.service';
 import { latLng, tileLayer, marker, polygon } from 'leaflet';
-import { Warning, ElectricChargingStation } from '../../types';
 
 @Component({
   selector: 'map-route',
   templateUrl: './map.route.html',
 })
 export class MapRoute {
-  constructor(private dataService: DataService) { }
 
 
   options = {
