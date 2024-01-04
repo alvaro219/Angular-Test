@@ -14,7 +14,6 @@ export class ParkingsRoute implements OnInit {
   parking_lorry: ParkingLorry[] = [];
   error: string | undefined;
   oninput: any | null;
-  webcams: any[] = [];
   source: Array<any> = [];
   columns: Array<GuiColumn> = [];
 

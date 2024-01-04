@@ -14,7 +14,6 @@ export class WarningsRoute implements OnInit {
   warning: Warning[] = [];
   error: string | undefined;
   oninput: any | null;
-  webcams: any[] = [];
   source: Array<any> = [];
   columns: Array<GuiColumn> = [];
 

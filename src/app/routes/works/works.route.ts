@@ -14,7 +14,6 @@ export class WorksRoute implements OnInit {
   roadworks: Roadwork[] = [];
   error: string | undefined;
   oninput: any | null;
-  webcams: any[] = [];
   source: Array<any> = [];
   columns: Array<GuiColumn> = [];
 

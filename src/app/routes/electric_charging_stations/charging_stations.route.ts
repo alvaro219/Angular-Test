@@ -14,7 +14,6 @@ export class ElectricChargingStationsRoute implements OnInit {
   electric_charging_station: ElectricChargingStation[] = [];
   error: string | undefined;
   oninput: any | null;
-  webcams: any[] = [];
   source: Array<any> = [];
   columns: Array<GuiColumn> = [];
 
