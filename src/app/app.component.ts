@@ -1,10 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from './data.service';
+import { Component, Input } from '@angular/core';
 import { RoadworksResponse, ParkingLorryResponse, WarningResponse, ClosureResponse, ElectricChargingStationResponse, Roadwork, ParkingLorry, Warning, Closure, ElectricChargingStation } from './types';
-import { firstValueFrom, zip, forkJoin } from 'rxjs';
 import { GuiColumn } from '@generic-ui/ngx-grid';
-import { RouterOutlet } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -21,16 +17,10 @@ export class AppComponent {
   error: string | undefined;
   oninput: any | null;
   autobahnen: string[] = [];
-  roadWorkDetails: any[] = [];
-  webcams: any[] = [];
   source: Array<any> = [];
   columns: Array<GuiColumn> = [];
 
   title = 'Angular_Test';
-
-  constructor(private dataService: DataService) { }
-
-
 
   generateSourceData(): Array<any> {
     const newData = this.autobahnen.map((road, index) => {
