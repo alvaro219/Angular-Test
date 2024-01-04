@@ -102,14 +102,14 @@ export class ParkingsRoute implements OnInit {
       //   header: "Route recommendation",
       //   field: "routeRecommendation"
       // },
-      {
-        header: "Start timestamp",
-        field: "startTimestamp",
-        view: (value: string) => {
-          const datetime = new Date(Date.parse(value))
-          return `${datetime.toLocaleDateString()} (${datetime.toLocaleTimeString()})`
-        }
-      },
+      // {
+      //   header: "Start timestamp",
+      //   field: "startTimestamp",
+      //   view: (value: string) => {
+      //     const datetime = new Date(Date.parse(value))
+      //     return `${datetime.toLocaleDateString()} (${datetime.toLocaleTimeString()})`
+      //   }
+      // },
       // {
       //   header: "Impact",
       //   field: "impact"

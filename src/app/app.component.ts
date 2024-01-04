@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   @Input() id!: string;
   roadworks: { [key: string]: RoadworksResponse } = {};
   parkings: { [key: string]: ParkingLorryResponse } = {};
@@ -30,29 +30,7 @@ export class AppComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit() {
-    // firstValueFrom(this.dataService.getAutobahnen()).then(res => {
-    //   this.autobahnen = res.roads;
 
-    //   this.autobahnen.forEach(road => {
-    //     forkJoin({
-    //       roadworks: this.dataService.getRoadWorks(road),
-    //       parkings: this.dataService.getParkingLorry(road),
-    //       warnings: this.dataService.getTrafficWarnings(road),
-    //       closures: this.dataService.getClosures(road),
-    //       chargingStations: this.dataService.getElectricChargingStations(road),
-    //     }).subscribe(data => {
-    //       this.roadworks[road] = data.roadworks;
-    //       this.parkings[road] = data.parkings;
-    //       this.warnings[road] = data.warnings;
-    //       this.closures[road] = data.closures;
-    //       this.chargingStations[road] = data.chargingStations;
-    //       this.source = this.generateSourceData();
-    //       this.columns = this.generateColumns(road);
-    //     });
-    //   });
-    // });
-  }
 
   generateSourceData(): Array<any> {
     const newData = this.autobahnen.map((road, index) => {

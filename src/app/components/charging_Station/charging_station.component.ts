@@ -18,7 +18,7 @@ export class ChargingStationComponent implements OnInit {
     firstValueFrom(this.dataService.getElectricChargingStations(this.id)).then(res => {
       this.charging_station = res.electric_charging_station;
     }).catch(error => {
-      this.error = "Error fetching closures"
+      this.error = "Error fetching charging stations"
     });
   }
 }
