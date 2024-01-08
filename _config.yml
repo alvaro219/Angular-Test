@@ -3,3 +3,9 @@ defaults:
       path: ""
     values:
       layout: home
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: home
+      permalink: /src/app/routes/home/home.route.html
