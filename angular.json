@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/angular-test",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "browser": "src/app/routes/home/home.route.ts",
             "polyfills": [
               "zone.js"
             ],
