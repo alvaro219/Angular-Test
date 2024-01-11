@@ -63,7 +63,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "repo": "https://github.com/alvaro219/Angular-Test/"
+            "repo": "https://github.com/alvaro219/Angular-Test"
           }
         },
         "serve": {
