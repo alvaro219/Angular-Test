@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/Angular-Test/",
             "outputPath": "dist/angular-test",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -34,8 +35,7 @@
               "src/styles.css",
               "./node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [],
-            "baseHref": "/Angular-Test/"
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -68,8 +68,7 @@
               "buildTarget": "Angular_Test:build:production"
             },
             "development": {
-              "buildTarget": "Angular_Test:build:development",
-              "baseHref": "/Angular-Test/"
+              "buildTarget": "Angular_Test:build:development"
             }
           },
           "defaultConfiguration": "development"
