@@ -62,7 +62,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://alvaro219.github.io/Angular_Test/"
+            "baseHref": "https://alvaro219.github.io/Angular-Test/"
           }
         },
         "serve": {
